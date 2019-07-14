@@ -1,0 +1,17 @@
+---
+# defaults file for firecracker
+firecracker_ver: v0.17.0
+firecracker_mirror: https://github.com/firecracker-microvm/firecracker/releases/download
+firecracker_apps:
+  - firecracker
+  - jailer
+
+firecracker_checksums:
+  firecracker:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v0.17.0/firecracker-v0.17.0
+    v0.17.0: sha256:57204c492cc1d32dd4aed50f34d4abdf88b4ec16acd3b5350848196249ffefb8
+  jailer:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v0.17.0/jailer-v0.17.0
+    v0.17.0: sha256:f4ae19403f785a3687ecf7f831c101e7a54b5962e25ae2bbe5d97ef75fc292da
+
+firecracker_install_dir: /usr/local/bin

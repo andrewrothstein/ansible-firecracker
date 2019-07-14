@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  role_name: firecracker
+  author: Andrew Rothstein
+  description: installs firecracker and jailer
+  company: BlackRock Financial Management
+  license:
+    - MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+  galaxy_tags:
+    - development
+
+dependencies: []

@@ -1,0 +1,6 @@
+---
+- name: looping over programs to install
+  loop: '{{ firecracker_apps }}'
+  loop_control:
+    loop_var: firecracker_app
+  include_tasks: install-program.yml
