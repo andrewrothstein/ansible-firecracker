@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=v0.17.0
+VER=${1:-v0.19.0}
 DIR=~/Downloads
 MIRROR=https://github.com/firecracker-microvm/firecracker/releases/download/$VER
 
