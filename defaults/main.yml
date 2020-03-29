@@ -1,6 +1,6 @@
 ---
 # defaults file for firecracker
-firecracker_ver: v0.19.0
+firecracker_ver: v0.21.1
 firecracker_mirror: https://github.com/firecracker-microvm/firecracker/releases/download
 firecracker_apps:
   - firecracker
@@ -16,6 +16,8 @@ firecracker_checksums:
     v0.18.0: sha256:f055a891cc49f3fbe9d1bfbcb3035369e90b6423fa2602324dcda309fe480f90
     # https://github.com/firecracker-microvm/firecracker/releases/download/v0.19.0/firecracker-v0.19.0
     v0.19.0: sha256:bd22027c637e2a1e2379e0089b2287c6bd92d4060e4a33ae49cc0ad6cfe1507a
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v0.21.1/firecracker-v0.21.1
+    v0.21.1: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
   jailer:
     # https://github.com/firecracker-microvm/firecracker/releases/download/v0.17.0/jailer-v0.17.0
     v0.17.0: sha256:f4ae19403f785a3687ecf7f831c101e7a54b5962e25ae2bbe5d97ef75fc292da
@@ -23,3 +25,5 @@ firecracker_checksums:
     v0.18.0: sha256:8dbb73d15b622199cae682d0c8a888561cddd47fde6f4463f1ed83ee42fd616a
     # https://github.com/firecracker-microvm/firecracker/releases/download/v0.19.0/jailer-v0.19.0
     v0.19.0: sha256:57438ac46fbfd9a97317a4283eb69d84d0c8960314318b20530307bac812e9e0
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v0.21.1/jailer-v0.21.1
+    v0.21.1: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
