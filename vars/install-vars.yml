@@ -1,7 +1,7 @@
 ---
 # vars file for firecracker
-firecracker_exe: '{{ firecracker_app }}-{{ firecracker_ver }}'
+firecracker_exe: '{{ firecracker_app }}-{{ firecracker_ver }}-{{ firecracker_arch }}'
 firecracker_url: '{{ firecracker_mirror }}/{{ firecracker_ver }}/{{ firecracker_exe }}'
-firecracker_checksum: '{{ firecracker_checksums[firecracker_app][firecracker_ver] }}'
+firecracker_checksum: '{{ firecracker_checksums[firecracker_app][firecracker_ver][firecracker_arch] }}'
 firecracker_install_exe: '{{ firecracker_install_dir }}/{{ firecracker_exe }}'
 firecracker_link: '{{ firecracker_install_dir }}/{{ firecracker_app }}'

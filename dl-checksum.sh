@@ -1,23 +1,39 @@
 #!/usr/bin/env sh
-VER=${1:-v0.21.1}
 DIR=~/Downloads
-MIRROR=https://github.com/firecracker-microvm/firecracker/releases/download/$VER
+MIRROR=https://github.com/firecracker-microvm/firecracker/releases/download
 
 dl()
 {
-    APP=$1
-    FILE=$APP-$VER$SUFFIX
-    URL=$MIRROR/$FILE
-    LFILE=$DIR/$FILE
+    local app=$1
+    local ver=$2
+    local arch=$3
+    local file="${app}-${ver}-${arch}"
+    local url=$MIRROR/$ver/$file
+    local lfile=$DIR/$file
 
-    if [ ! -e $LFILE ];
+    if [ ! -e $lfile ];
     then
-        wget -q -O $LFILE $URL
+        wget -q -O $lfile $url
     fi
 
-    printf "    # %s\n" $URL
-    printf "    %s: sha256:%s\n" $VER `sha256sum $LFILE | awk '{print $1}'`
+    printf "      # %s\n" $url
+    printf "      %s: sha256:%s\n" $arch $(sha256sum $lfile | awk '{print $1}')
 }
 
-dl firecracker
-dl jailer
+dlver() {
+    local ver=$1
+    printf "  jailer:\n"
+    printf "    %s:\n" $ver
+    dl jailer $ver aarch64
+    dl jailer $ver x86_64
+    printf "  firecracker:\n"
+    printf "    %s:\n" $ver
+    dl firecracker $ver aarch64
+    dl firecracker $ver x86_64
+}
+
+printf "firecracker_checksums:\n"
+dlver v0.18.1
+dlver v0.19.1
+dlver v0.20.0
+dlver ${1:-v0.21.1}
