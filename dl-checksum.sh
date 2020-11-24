@@ -33,7 +33,4 @@ dlver() {
 }
 
 printf "firecracker_checksums:\n"
-dlver v0.18.1
-dlver v0.19.1
-dlver v0.20.0
-dlver ${1:-v0.21.1}
+dlver ${1:-v0.23.1}

@@ -2,7 +2,7 @@
 - name: resolving vars for {{ firecracker_app }}
   include_vars:
     file: install-vars.yml
-- name: download
+- name: downloading {{ firecracker_url }} to {{ firecracker_install_exe }}
   become: yes
   become_user: root
   get_url:
@@ -10,7 +10,7 @@
     dest: '{{ firecracker_install_exe }}'
     checksum: '{{ firecracker_checksum }}'
     mode: 0755
-- name: link
+- name: linking {{ firecracker_link }} to {{ firecracker_install_exe }}
   become: yes
   become_user: root
   file:
