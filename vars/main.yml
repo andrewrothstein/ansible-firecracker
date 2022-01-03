@@ -1,0 +1,9 @@
+---
+# vars file for firecracker
+firecracker_tgz: firecracker-{{ firecracker_ver }}-{{ firecracker_arch }}.tgz
+firecracker_tmp_tgz: /tmp/{{ firecracker_tgz }}
+firecracker_url: '{{ firecracker_mirror }}/{{ firecracker_ver }}/{{ firecracker_tgz }}'
+firecracker_checksum: '{{ firecracker_checksums[firecracker_ver][firecracker_arch] }}'
+
+firecracker_parent_install_subdir: '{{ firecracker_parent_install_dir }}/firecracker'
+firecracker_install_dir: '{{ firecracker_parent_install_subdir }}/release-{{ firecracker_ver }}-{{ firecracker_arch }}'

@@ -1,6 +1,47 @@
 ---
-- name: looping over programs to install
-  loop: '{{ firecracker_apps }}'
-  loop_control:
-    loop_var: firecracker_app
-  include_tasks: install-program.yml
+- name: mkdir {{ firecracker_parent_install_subdir }}
+  become: true
+  become_user: root
+  file:
+    path: '{{ firecracker_parent_install_subdir }}'
+    state: directory
+    mode: 0755
+- name: check for install in {{ firecracker_install_dir }}
+  become: true
+  stat:
+    path: '{{ firecracker_install_dir }}'
+  changed_when: false
+  register: firecracker_binary
+- when: not firecracker_binary.stat.exists
+  block:
+    - name: downloading {{ firecracker_url }} to {{ firecracker_tmp_tgz }}
+      become: true
+      become_user: root
+      get_url:
+        url: '{{ firecracker_url }}'
+        dest: '{{ firecracker_tmp_tgz }}'
+        checksum: '{{ firecracker_checksum }}'
+        mode: 0644
+    - name: unarchiving {{ firecracker_tmp_tgz }} to {{ firecracker_parent_install_subdir }}
+      become: true
+      become_user: root
+      unarchive:
+        remote_src: true
+        src: '{{ firecracker_tmp_tgz }}'
+        dest: '{{ firecracker_parent_install_subdir }}'
+        creates: '{{ firecracker_install_dir }}'
+  always:
+    - name: rm {{ firecracker_tmp_tgz }}
+      become: true
+      become_user: root
+      file:
+        path: '{{ firecracker_tmp_tgz }}'
+        state: absent
+- name: linking executables in {{ firecracker_install_dir }} to {{ firecracker_parent_install_dir }}/bin
+  become: true
+  become_user: root
+  with_items: '{{ firecracker_apps }}'
+  file:
+    src: '{{ firecracker_install_dir }}/{{ item }}-{{ firecracker_ver }}-{{ firecracker_arch }}'
+    dest: '{{ firecracker_parent_install_dir }}/bin/{{ item }}'
+    state: link
