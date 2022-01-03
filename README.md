@@ -1,6 +1,6 @@
 andrewrothstein.firecracker
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-firecracker.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-firecracker)
+![Build Status](https://github.com/andrewrothstein/ansible-firecracker/actions/workflows/build.yml/badge.svg)
 
 Installs [firecracker](https://firecracker-microvm.github.io/)
 
