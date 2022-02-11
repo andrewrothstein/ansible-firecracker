@@ -96,4 +96,4 @@ firecracker_checksums:
     # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.0/firecracker-v1.0.0-aarch64.tgz
     aarch64: sha256:f608119a28f05c4f5a75516fe57a269a0bdda5e7969d6505112f84a761ab055a
     # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.0/firecracker-v1.0.0-x86_64.tgz
-    x86_64: sha256:c9e595b2bbc7df26254b6b87fd391295e1e35ef2039c759c652bcb815f82185
+    x86_64: sha256:c9e595b2bbc7df26254b6b87fd391295e1e35ef2039c759c652bcb815f82185d
