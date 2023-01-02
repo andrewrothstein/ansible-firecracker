@@ -21,16 +21,15 @@ galaxy_info:
     - name: EL
       versions:
         - 8
+        - 9
     - name: Fedora
       versions:
-        - 35
         - 36
+        - 37
     - name: Ubuntu
       versions:
         - bionic
         - focal
+        - jammy
   galaxy_tags:
     - development
-
-dependencies:
-  - andrewrothstein.unarchive-deps

@@ -1,6 +1,6 @@
 ---
 # defaults file for firecracker
-firecracker_ver: v0.25.2
+firecracker_ver: v1.2.0
 firecracker_arch: x86_64
 
 firecracker_mirror: https://github.com/firecracker-microvm/firecracker/releases/download
@@ -92,3 +92,48 @@ firecracker_checksums:
     aarch64: sha256:ef9502f8779551f524d4746f4c9b0e1db1c7920afa99ed4eb710c5ee56a17faf
     # https://github.com/firecracker-microvm/firecracker/releases/download/v0.25.2/firecracker-v0.25.2-x86_64.tgz
     x86_64: sha256:67394fabe43d5df59026bfbb9ca4b47ba6df2b060d7e93074a204829e3abfece
+  v1.0.0:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.0/firecracker-v1.0.0-aarch64.tgz
+    aarch64: sha256:f608119a28f05c4f5a75516fe57a269a0bdda5e7969d6505112f84a761ab055a
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.0/firecracker-v1.0.0-x86_64.tgz
+    x86_64: sha256:c9e595b2bbc7df26254b6b87fd391295e1e35ef2039c759c652bcb815f82185d
+  v1.0.1:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.1/firecracker-v1.0.1-aarch64.tgz
+    aarch64: sha256:d45b55be23a8579e5ce0c4ea2bc61d83bb787c9306075c390565fde8c593f584
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.1/firecracker-v1.0.1-x86_64.tgz
+    x86_64: sha256:7bd8bbeddf4f6436b1acc004e674e2dc7e792d8debcecee9e852cdf040d66e90
+  v1.0.2:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.2/firecracker-v1.0.2-aarch64.tgz
+    aarch64: sha256:e8c41e8ac437cea904ed819a9cd4c1927d2c09f8c9065d2755872abe4a349fbb
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.0.2/firecracker-v1.0.2-x86_64.tgz
+    x86_64: sha256:e7c60312a14328043d4b01cbecedf13a8767452e2926ccd105a8b9dce315c85b
+  v1.1.0:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.0/firecracker-v1.1.0-aarch64.tgz
+    aarch64: sha256:f925b9063e1b9a747f5150d656e83fa9100aa1bef9318fd0bd491ada945aeb79
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.0/firecracker-v1.1.0-x86_64.tgz
+    x86_64: sha256:0bb0518634600e86830913c3b54a0cce8bed95c97e3b88cd6d9c9fc61ee14016
+  v1.1.1:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.1/firecracker-v1.1.1-aarch64.tgz
+    aarch64: sha256:02a545a946ccb633e63ac4a001a27600535cd0c702ef4f1f003dfaa8bcf45407
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.1/firecracker-v1.1.1-x86_64.tgz
+    x86_64: sha256:29194e13888358c6332995199ee288c081a8a23e68f0046944e4bb7f6548af57
+  v1.1.2:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.2/firecracker-v1.1.2-aarch64.tgz
+    aarch64: sha256:115238008d702a425b37f1fef24622e57bdfd7e2750a9ec1d56e7a2ade9c380a
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.2/firecracker-v1.1.2-x86_64.tgz
+    x86_64: sha256:46416573e6ad4c1f731d1023412a9ee2727d37b23d144fd105e11c5e80a4d13f
+  v1.1.3:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.3/firecracker-v1.1.3-aarch64.tgz
+    aarch64: sha256:8a2fb1e1811921926e33ed4d8efc5ed5dcfa58ebc02b5496a9fba8742edae32a
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.3/firecracker-v1.1.3-x86_64.tgz
+    x86_64: sha256:dfe0aa54139bda16a49d020ccc4f6497df690d69bdc193d45fdd85955a2fdcda
+  v1.1.4:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.4/firecracker-v1.1.4-aarch64.tgz
+    aarch64: sha256:d7ae7c14bdb21c3b89eb7c9017209a7a6fc27505185b61c01b4eb63aac1af9e2
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.1.4/firecracker-v1.1.4-x86_64.tgz
+    x86_64: sha256:bf8e7c6d48e6bc9c3c188d389ae058889f341b627c3ea3b44e469977e6025e68
+  v1.2.0:
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.2.0/firecracker-v1.2.0-aarch64.tgz
+    aarch64: sha256:85415aa388a6722506d171ccedc9e413fcbd7101b9c543a99155bcab9621c5ba
+    # https://github.com/firecracker-microvm/firecracker/releases/download/v1.2.0/firecracker-v1.2.0-x86_64.tgz
+    x86_64: sha256:2343d1c1c6bf605c85d6245ef008454faefcd33cd84c64a0ddfba6cdbfd1ec53

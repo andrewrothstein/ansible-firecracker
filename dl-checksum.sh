@@ -28,20 +28,4 @@ dlver() {
     dl firecracker $ver x86_64
 }
 
-printf "firecracker_checksums:\n"
-dlver v0.22.3
-dlver v0.22.4
-dlver v0.23.2
-dlver v0.23.3
-dlver v0.23.4
-dlver v0.23.5
-dlver v0.24.0
-dlver v0.24.1
-dlver v0.24.2
-dlver v0.24.3
-dlver v0.24.4
-dlver v0.24.5
-dlver v0.24.6
-dlver v0.25.0
-dlver v0.25.1
-dlver ${1:-v0.25.2}
+dlver ${1:-v1.2.0}
