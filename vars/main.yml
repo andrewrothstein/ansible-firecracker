@@ -1,7 +1,8 @@
 ---
 # vars file for firecracker
+firecracker_arch: '{{ ansible_architecture }}'
 firecracker_tgz: firecracker-{{ firecracker_ver }}-{{ firecracker_arch }}.tgz
-firecracker_tmp_tgz: /tmp/{{ firecracker_tgz }}
+firecracker_tmp_tgz: '{{ firecracker_tmp_dir | default("/tmp") }}/{{ firecracker_tgz }}'
 firecracker_url: '{{ firecracker_mirror }}/{{ firecracker_ver }}/{{ firecracker_tgz }}'
 firecracker_checksum: '{{ firecracker_checksums[firecracker_ver][firecracker_arch] }}'
 

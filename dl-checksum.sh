@@ -28,4 +28,4 @@ dlver() {
     dl firecracker $ver x86_64
 }
 
-dlver ${1:-v1.5.0}
+dlver ${1:-v1.7.0}

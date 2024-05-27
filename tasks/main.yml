@@ -1,49 +1,51 @@
 ---
-- include_role:
-    name: andrewrothstein.unarchivedeps
-- name: mkdir {{ firecracker_parent_install_subdir }}
+- name: Mkdir {{ firecracker_parent_install_subdir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     path: '{{ firecracker_parent_install_subdir }}'
     state: directory
-    mode: 0755
-- name: check for install in {{ firecracker_install_dir }}
+    mode: '755'
+- name: Check for install in {{ firecracker_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ firecracker_install_dir }}'
   changed_when: false
   register: firecracker_binary
-- when: not firecracker_binary.stat.exists
+- name: Downloading and installing firecracker
+  when: not firecracker_binary.stat.exists
   block:
-    - name: downloading {{ firecracker_url }} to {{ firecracker_tmp_tgz }}
+    - name: Downloading {{ firecracker_url }} to {{ firecracker_tmp_tgz }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ firecracker_url }}'
         dest: '{{ firecracker_tmp_tgz }}'
         checksum: '{{ firecracker_checksum }}'
-        mode: 0644
-    - name: unarchiving {{ firecracker_tmp_tgz }} to {{ firecracker_parent_install_subdir }}
+        mode: '644'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
+    - name: Unarchiving {{ firecracker_tmp_tgz }} to {{ firecracker_parent_install_subdir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ firecracker_tmp_tgz }}'
         dest: '{{ firecracker_parent_install_subdir }}'
         creates: '{{ firecracker_install_dir }}'
   always:
-    - name: rm {{ firecracker_tmp_tgz }}
+    - name: Rm {{ firecracker_tmp_tgz }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ firecracker_tmp_tgz }}'
         state: absent
-- name: linking executables in {{ firecracker_install_dir }} to {{ firecracker_parent_install_dir }}/bin
+- name: Linking executables in {{ firecracker_install_dir }} to {{ firecracker_parent_install_dir }}/bin
   become: true
   become_user: root
   with_items: '{{ firecracker_apps }}'
-  file:
+  ansible.builtin.file:
     src: '{{ firecracker_install_dir }}/{{ item }}-{{ firecracker_ver }}-{{ firecracker_arch }}'
     dest: '{{ firecracker_parent_install_dir }}/bin/{{ item }}'
     state: link

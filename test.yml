@@ -1,20 +1,27 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.firecracker
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/bin/jailer --version
+    - name: Executing 'jailer --version'
+      ansible.builtin.command: jailer --version
+      changed_when: false
       register: jailer_test_output
-    - name: jailer --version
-      debug:
+    - name: Output from 'jailer --version'
+      ansible.builtin.debug:
         msg: '{{ jailer_test_output.stdout }}'
-    - command: /usr/local/bin/firecracker --version
+    - name: Executing 'firecracker --version'
+      ansible.builtin.command: firecracker --version
+      changed_when: false
       register: firecracker_test_output
-    - name: firecracker --version
-      debug:
+    - name: Output from 'firecracker --version'
+      ansible.builtin.debug:
         msg: '{{ firecracker_test_output.stdout }}'
-    - command: /usr/local/bin/seccompiler-bin --version
+    - name: Executing 'seccompiler-bin --version'
+      ansible.builtin.command: seccompiler-bin --version
+      changed_when: false
       register: seccomp_bin_test_output
-    - name: seccompiler-bin --version
-      debug:
+    - name: Output from 'seccompiler-bin --version'
+      ansible.builtin.debug:
         msg: '{{ seccomp_bin_test_output.stdout }}'
